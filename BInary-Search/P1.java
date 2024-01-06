@@ -4,21 +4,13 @@ public class P1 {
     private boolean isFound = false;
 
     private void find(int num) {
-        len = (arr.length - 1) / 2;
+        len = (0 + arr.length) / 2;
         if (num == arr[len]) {
             isFound = true;
         } else if (num > arr[len]) {
-            for (int i = len + 1; i < arr.length; i++) {
-                if (arr[i] == num) {
-                    isFound = true;
-                }
-            }
+
         } else if (num < arr[len]) {
-            for (int i = len - 1; i >= 0; i--) {
-                if (arr[i] == num) {
-                    isFound = true;
-                }
-            }
+
         }
     }
 
@@ -29,7 +21,6 @@ public class P1 {
             System.out.println("Found");
         } else {
             System.out.println("Not Found");
-
         }
     }
 }
