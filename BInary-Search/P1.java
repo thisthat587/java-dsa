@@ -1,5 +1,5 @@
 public class P1 {
-    private int arr[] = { 2, 5, 7, 8, 22, 77, 88, 99 };
+    private int arr[] = { 2, 5, 7, 8, 22, 77, 88 };
     int start = 0;
     int end = arr.length - 1;
     int mid = 0;
