@@ -17,7 +17,8 @@ public class StudyPlan {
         int end=totalTime;
         int mid=(start+end)/2;
 
-        
+        // incomplete 
+        // tried but failed to complete...
     }
     public static void main(String[] args){
         int timeForChapters[]={2,4,6,7,5};
