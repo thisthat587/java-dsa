@@ -1,6 +1,5 @@
 // Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
-
 // Example 1:
 // Input: nums = [1,3,5,6], target = 5
 // Output: 2
@@ -14,16 +13,21 @@
 // Output: 4
 
 public class SearchInsertPos {
+    static int pos = 0;
+
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 4, 5, 6, 7, 9, 18, 35, 67, 68, 78, 89, 90, 99, 100, 111, 113, 114, 333 };
-        // int arr[] = { 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11,
-        // 10,9, 8, 7, 6};
-        int index = BinarySearchInASC(arr, 3);
+        // int arr[] = { 1, 2, 4, 5, 6, 7, 9, 18, 35, 67, 68, 78, 89, 90, 99, 100, 111,
+        // 113, 114, 333 };
+        int arr[] = { 85, 74, 63, 62, 51, 40, 39, 36, 34, 31, 29, 24, 21, 19, 16,
+                14, 11, 8, 5, 4 };
+        int target = 3;
+        int index = BinarySearchInASC(arr, target);
         if (index == -1) {
             System.out.println("Not Found");
         } else {
             System.out.println("Index of Element : " + index);
         }
+        System.out.println("Insert Position of " + target + " is " + pos);
     }
 
     static int BinarySearchInASC(int arr[], int target) {
@@ -37,8 +41,22 @@ public class SearchInsertPos {
                 if (arr[mid] == target) {
                     return mid;
                 } else if (target < arr[mid]) {
+                    if (mid != arr.length - 1) {
+                        if (arr[mid + 1] < target) {
+                            pos = mid;
+                        }
+                    } else {
+                        pos = mid;
+                    }
                     start = mid + 1;
                 } else {
+                    if (mid != 0) {
+                        if (arr[mid - 1] > target) {
+                            pos = mid;
+                        }
+                    } else {
+                        pos = mid;
+                    }
                     end = mid - 1;
                 }
             }
@@ -49,8 +67,22 @@ public class SearchInsertPos {
                 if (arr[mid] == target) {
                     return mid;
                 } else if (target > arr[mid]) {
+                    if (mid != arr.length - 1) {
+                        if (arr[mid + 1] > target) {
+                            pos = mid + 1;
+                        }
+                    } else {
+                        pos = mid;
+                    }
                     start = mid + 1;
                 } else {
+                    if (mid != 0) {
+                        if (arr[mid - 1] < target) {
+                            pos = mid;
+                        }
+                    } else {
+                        pos = mid;
+                    }
                     end = mid - 1;
                 }
             }
