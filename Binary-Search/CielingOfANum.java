@@ -6,7 +6,7 @@ public class CielingOfANum {
         // length=16 mid =16,7
         // int arr[] = { 123, 113, 111, 98, 96, 94, 76, 53, 52, 33, 12, 11, 9, 5, 3, 1 };
         // length=16 mid=53,7;
-        int target = 11;
+        int target = 21;
         int index = findCieling(arr, target);
         if (index == -1) {
             System.out.println("Cieling of number is not found.....\n");
@@ -19,7 +19,7 @@ public class CielingOfANum {
         int start = 0;
         int end = arr.length - 1;
         int mid = 0;
-        int index=0;
+        // int index=0;
         if (arr[start] <= arr[end]) {
             System.out.println("\nArray is sorted in Ascending order.....");
             if (target > arr[end]) {
@@ -32,7 +32,7 @@ public class CielingOfANum {
                 } else if (target > arr[mid]) {
                     start = mid + 1;
                 } else {
-                    index=mid;
+                    // index=mid;
                     end = mid - 1;
                 }
             }
@@ -49,11 +49,12 @@ public class CielingOfANum {
                 } else if (target > arr[mid]) {
                     end = mid - 1;
                 } else {
-                    index=mid;
+                    // index=mid;
                     start = mid + 1;
                 }
             }
         }
-        return index;
+        // return index;
+        return start;
     }
 }
