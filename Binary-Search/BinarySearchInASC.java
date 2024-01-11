@@ -6,7 +6,7 @@ public class BinarySearchInASC {
 
     private boolean find(int num) {
         while (start <= end) {
-            int mid = start + (end-start) / 2;
+            int mid = start + (end - start) / 2;
             if (num < arr[mid]) {
                 end = mid - 1;
             } else if (num > arr[mid]) {
