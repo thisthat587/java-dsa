@@ -1,11 +1,11 @@
-public class PeakOfMountain {
+public class FindPeakElement {
     public static void main(String[] args) {
         int arr[] = { 0, 5, 3, 2, 0 };
-        int peak = peakIndexInMountainArray(arr);
+        int peak = findPeakElement(arr);
         System.out.println("Peak is at " + peak);
     }
 
-    public static int peakIndexInMountainArray(int arr[]) {
+    public static int findPeakElement(int arr[]) {
         int start = 0;
         int end = arr.length - 1;
         int mid = 0;
