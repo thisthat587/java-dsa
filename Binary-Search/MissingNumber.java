@@ -3,7 +3,6 @@ public class MissingNumber {
         int[] arr = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
         System.out.println(missingNumber(arr));
         // arr = sortArr(arr);
-
         // for (int num : arr) {
         // System.out.println(num);
         // }
