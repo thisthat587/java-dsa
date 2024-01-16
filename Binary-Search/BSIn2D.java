@@ -1,3 +1,5 @@
+// binary search in 2D arrray sorted in row and column wise.....
+
 import java.util.*;
 
 public class BSIn2D {
