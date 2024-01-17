@@ -21,17 +21,25 @@ public class BSInStrictlySorted2D {
         int row = (stRow + endRow) / 2;
         int col = (stCol + endCol) / 2;
 
-        while (row < arr.length && col >= 0) {
-            col = (stCol + endCol) / 2;
+        while (stRow <= endRow && stCol <= endCol) {
             row = (stRow + endRow) / 2;
+            col = (stCol + endCol) / 2;
             if (arr[row][col] == target) {
                 return new int[] { row, col };
             } else if (arr[row][col] < target) {
-                stRow = row;
-                stCol = col + 1;
+                if (col < arr[0].length - 1) {
+                    stCol = col + 1;
+                } else {
+                    stRow = row + 1;
+                    stCol = 0;
+                }
             } else {
-                endRow = row;
-                endCol = col - 1;
+                if (col > 0) {
+                    endCol = col - 1;
+                } else {
+                    endRow = row - 1;
+                    endCol = arr[0].length - 1;
+                }
             }
         }
         return new int[] { -1, -1 };
