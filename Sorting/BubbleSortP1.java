@@ -5,7 +5,7 @@ public class BubbleSortP1 {
   public static void main(String[] args) {
     int[] arr = { 333, 54, 5, 6, 43, 3, 2, 5, 6, 6, 4, 3, 2, 1 };
     int[] brr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    System.out.println(Arrays.toString(sortArr(brr)));
+    System.out.println(Arrays.toString(sortArr(arr)));
   }
 
   static int[] sortArr(int[] arr) {
