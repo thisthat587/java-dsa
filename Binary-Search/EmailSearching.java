@@ -12,19 +12,27 @@ public class EmailSearching {
                 "shopdubey76@gmail.com", "snopaubey/U@gmall.com"
         };
 
-        String target = "dubeyrooms108@gmail.com";
+        String target = "snopaubey/U@gmall.com";
         System.out.println(searchEmail(email, target));
+
     }
 
-    static boolean isEqual(String email, String target) {
+    static int isEqual(String email, String target) {
+        int result = 0;
         char[] emailArr = email.toCharArray();
         char[] targetArr = target.toCharArray();
         for (int i = 0; i < emailArr.length; i++) {
-            if (emailArr[i] != targetArr[i]) {
-                return false;
+            if (emailArr[i] == targetArr[i]) {
+                result = 0;
+            } else if (emailArr[i] < targetArr[i]) {
+                result = 1;
+                return result;
+            } else {
+                result = -1;
+                return result;
             }
         }
-        return true;
+        return result;
     }
 
     static int searchEmail(String[] email, String target) {
@@ -34,20 +42,16 @@ public class EmailSearching {
         int mid = 0;
 
         while (end >= start) {
-            
             mid = start + (end - start) / 2;
-
-            if (target.compareTo(email[mid]) == 0) {
-                if (isEqual(email[mid], target)) {
-                    return mid;
-                }
-            } else if (target.compareTo(email[mid]) > 0) {
+            int compare = isEqual(email[mid], target);
+            if (compare == 0) {
+                return mid;
+            } else if (compare == 1) {
                 start = mid + 1;
-            } else if (target.compareTo(email[mid]) < 0) {
+            } else {
                 end = mid - 1;
             }
         }
         return -1;
     }
-
 }
